@@ -72,7 +72,9 @@ public class Operations implements IOperations{
 	}
 
 	private boolean recordSceance(Sceance sceance) {
-		sql = "INSERT INTO sceances (date) VALUES('"+ sceance.getDate() +"')";
+		sql = "INSERT INTO sceances (date, semester, year) VALUES('"+ sceance.getDate() + "',"
+				+ sceance.getSemester() + ",'"
+				+ sceance.getYear() + "')";
 		try {
 			pst = connect.prepareStatement(sql);
 			if (pst.execute()) {
